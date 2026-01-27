@@ -1,14 +1,17 @@
 import java.awt.*;
 
-public class Saab95{
+public class Saab95 extends Car{ // class declaration, public: accessible from any class
 
+    // instance variables
     public boolean turboOn;
+
+    /*                                              attributes vi abstraherar bort
     public int nrDoors; // Number of doors on the car
     public double enginePower; // Engine power of the car
     public double currentSpeed; // The current speed of the car
     public Color color; // Color of the car
     public String modelName; // The car model name
-    
+*/
     public Saab95(){
         nrDoors = 2;
         color = Color.red;
@@ -17,38 +20,20 @@ public class Saab95{
         modelName = "Saab95";
         stopEngine();
     }
-    
-    public int getNrDoors(){
-        return nrDoors;
-    }
-    public double getEnginePower(){
-        return enginePower;
-    }
+/*                                             metoder vi abstraherar bort
+    public int getNrDoors(){return nrDoors; }
+    public double getEnginePower(){return enginePower; }
+    public double getCurrentSpeed(){return currentSpeed; }
+    public Color getColor(){return color; }
 
-    public double getCurrentSpeed(){
-        return currentSpeed;
-    }
+    public void setColor(Color clr){ color = clr; }
 
-    public Color getColor(){
-        return color;
-    }
-
-    public void setColor(Color clr){
-	    color = clr;
-    }
-
-    public void startEngine(){
-	    currentSpeed = 0.1;
-    }
-
-    public void stopEngine(){
-	    currentSpeed = 0;
-    }
-
+    public void startEngine(){currentSpeed = 0.1; }
+    public void stopEngine(){currentSpeed = 0; }
+*/
     public void setTurboOn(){
 	    turboOn = true;
     }
-
     public void setTurboOff(){
 	    turboOn = false;
     }
@@ -62,11 +47,11 @@ public class Saab95{
     public void incrementSpeed(double amount){
         currentSpeed = getCurrentSpeed() + speedFactor() * amount;
     }
-
     public void decrementSpeed(double amount){
         currentSpeed = getCurrentSpeed() - speedFactor() * amount;
     }
-    
+
+/*                                      bort abstraherat
     // TODO fix this method according to lab pm
     public void gas(double amount){
         incrementSpeed(amount);
@@ -76,4 +61,6 @@ public class Saab95{
     public void brake(double amount){
         decrementSpeed(amount);
     }
+
+ */
 }
