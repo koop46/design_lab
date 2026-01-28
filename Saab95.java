@@ -33,4 +33,5 @@ public class Saab95 extends Car{ // class declaration, public: accessible from a
         currentSpeed = getCurrentSpeed() - speedFactor() * amount;
     }
 
+
 }
