@@ -9,14 +9,20 @@ public abstract class Car implements Movement {
     public Color color; // Color of the car
     public String modelName; // The car model name
     public abstract double speedFactor();
+    public double x_value;
+    public double y_value;
+    public char[] direction = {'W','N','E','S'};
+    public int rotation_index;
 
 
 
-    public Car(int nrDoors, double enginePower, Color color, String modelName){
+    public Car(int nrDoors, double enginePower, Color color, String modelName, double x_value, double y_value){
         this.nrDoors = nrDoors;
         this.enginePower = enginePower;
         this.color = color;
         this.modelName = modelName;
+        this.x_value = x_value;
+        this.y_value = y_value;
         stopEngine();
     }
 
@@ -35,11 +41,12 @@ public abstract class Car implements Movement {
 
 
     public void incrementSpeed(double amount){
-        currentSpeed = 1;
+        currentSpeed = Math.min(getCurrentSpeed() + speedFactor() * amount,enginePower);
     }
     public void decrementSpeed(double amount){
-        currentSpeed = 1;
+        currentSpeed = Math.max(getCurrentSpeed() - speedFactor() * amount,0);
     }
+
 
     // TODO fix this method according to lab pm
     public void gas(double amount){
@@ -59,6 +66,8 @@ public abstract class Car implements Movement {
     public void turnRight(){
 
     };
+
+
 }
 
 

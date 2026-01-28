@@ -6,7 +6,7 @@ public class Saab95 extends Car{ // class declaration, public: accessible from a
     public boolean turboOn;
 
     public Saab95(){
-        super(2, 125, Color.red, "Saab95" );
+        super(2, 125, Color.red, "Saab95");
 	    turboOn = false;
         stopEngine();
     }
@@ -26,12 +26,7 @@ public class Saab95 extends Car{ // class declaration, public: accessible from a
         return enginePower * 0.01 * turbo;
     }
 
-    public void incrementSpeed(double amount){
-        currentSpeed = getCurrentSpeed() + speedFactor() * amount;
-    }
-    public void decrementSpeed(double amount){
-        currentSpeed = getCurrentSpeed() - speedFactor() * amount;
-    }
+
 
 
 }
