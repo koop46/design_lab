@@ -9,7 +9,15 @@ public class Car {
     private Color color; // Color of the car
     private String modelName; // The car model name
 
-    //methods
+    public Car(int nrDoors, double enginePower, Color color, String modelName){
+        this.nrDoors = nrDoors;
+        this.enginePower = enginePower;
+        this.color = color;
+        this.modelName = modelName;
+        stopEngine();
+    }
+
+    //getters
     public int getNrDoors(){return nrDoors; }
     public double getEnginePower(){return enginePower; }
     public double getCurrentSpeed(){return currentSpeed; }
@@ -18,7 +26,7 @@ public class Car {
     //setter
     public void setColor(Color clr){ color = clr; }
 
-    //methods
+    //action methods
     public void startEngine(){currentSpeed = 0.1; }
     public void stopEngine(){currentSpeed = 0; }
 

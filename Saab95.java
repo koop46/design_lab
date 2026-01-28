@@ -20,7 +20,7 @@ public class Saab95 extends Car{ // class declaration, public: accessible from a
         modelName = "Saab95";
         stopEngine();
     }
-/*                                             metoder vi abstraherar bort
+/*                                             metoder i Superclass
     public int getNrDoors(){return nrDoors; }
     public double getEnginePower(){return enginePower; }
     public double getCurrentSpeed(){return currentSpeed; }
@@ -31,13 +31,16 @@ public class Saab95 extends Car{ // class declaration, public: accessible from a
     public void startEngine(){currentSpeed = 0.1; }
     public void stopEngine(){currentSpeed = 0; }
 */
+
+    // saab metoder
     public void setTurboOn(){
 	    turboOn = true;
     }
     public void setTurboOff(){
 	    turboOn = false;
     }
-    
+
+    //                                              metoder till interface
     public double speedFactor(){
         double turbo = 1;
         if(turboOn) turbo = 1.3;
@@ -51,7 +54,7 @@ public class Saab95 extends Car{ // class declaration, public: accessible from a
         currentSpeed = getCurrentSpeed() - speedFactor() * amount;
     }
 
-/*                                      bort abstraherat
+/*
     // TODO fix this method according to lab pm
     public void gas(double amount){
         incrementSpeed(amount);
