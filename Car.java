@@ -9,10 +9,11 @@ public abstract class Car implements Movement {
     public Color color; // Color of the car
     public String modelName; // The car model name
     public abstract double speedFactor();
-    public double x_value;
-    public double y_value;
-    public char[] direction = {'W','N','E','S'};
-    public int rotation_index;
+    public double x_value = 0;
+    public double y_value = 0;
+    public int direction = 0;
+
+
 
 
 
@@ -48,25 +49,40 @@ public abstract class Car implements Movement {
     }
 
 
-    // TODO fix this method according to lab pm
     public void gas(double amount){
-        incrementSpeed(amount);
+
+        if (amount > 0 && amount < 1) {
+            incrementSpeed(amount);
+        } else {
+            System.out.println("Needs to be between 0 and 1");
+        }
     }
 
-    // TODO fix this method according to lab pm
     public void brake(double amount){
-        decrementSpeed(amount);
+        if (amount > 0 && amount < 1)  {
+            decrementSpeed(amount);
+        } else {
+            System.out.println("Needs to be between 0 and 1");
+        }
+
     }
+
     public void move(){
 
-    };
-    public void turnLeft(){
+        if (direction %4 == 0) {
+            y_value += currentSpeed;
+        } else if (direction %4 == 1) {
+            x_value += currentSpeed;
+        } else if (direction %4 == 2) {
+            y_value -= currentSpeed;
+        } else if (direction %4 == 3) {
+            x_value -= currentSpeed;
+        }
+
 
     };
-    public void turnRight(){
-
-    };
-
+    public void turnLeft() { direction -= 1;};
+    public void turnRight(){ direction += 1;};
 
 }
 
