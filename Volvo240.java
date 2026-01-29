@@ -13,7 +13,7 @@ public class Volvo240 extends Car{
     // interface metod signatur
 
     public double speedFactor(){
-        return enginePower * 0.01 * trimFactor;
+        return super.getEnginePower() * 0.01 * trimFactor;
     }
 
 

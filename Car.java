@@ -3,15 +3,15 @@ import java.awt.*;
 public abstract class Car implements Movement {
 
     // attributes
-    public int nrDoors; // Number of doors on the car
-    public double enginePower; // Engine power of the car
-    public double currentSpeed; // The current speed of the car
-    public Color color; // Color of the car
-    public String modelName; // The car model name
+    private int nrDoors; // Number of doors on the car
+    private double enginePower; // Engine power of the car
+    private double currentSpeed; // The current speed of the car
+    private Color color; // Color of the car
+    private String modelName; // The car model name
     public abstract double speedFactor();
-    public double x_value = 0;
-    public double y_value = 0;
-    public int direction = 0;
+    private double x_value = 0;
+    private double y_value = 0;
+    private int direction = 0;
 
 
 
