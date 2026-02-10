@@ -12,18 +12,20 @@ public abstract class Car implements Movement {
     private double x_value = 0;
     private double y_value = 0;
     private int direction = 0;
+    private int mass;
 
 
 
 
 
-    public Car(int nrDoors, double enginePower, Color color, String modelName, double x_value, double y_value){
+    public Car(int nrDoors, double enginePower, Color color, String modelName, double x_value, double y_value, int mass){
         this.nrDoors = nrDoors;
         this.enginePower = enginePower;
         this.color = color;
         this.modelName = modelName;
         this.x_value = x_value;
         this.y_value = y_value;
+        this.mass = mass;
         stopEngine();
     }
 

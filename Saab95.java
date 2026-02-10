@@ -6,7 +6,7 @@ public class Saab95 extends Car{ // class declaration, public: accessible from a
     public boolean turboOn;
 
     public Saab95(){
-        super(2, 125, Color.red, "Saab95", 0, 0);
+        super(2, 125, Color.red, "Saab95", 0, 0, 2500);
 	    turboOn = false;
         stopEngine();
     }
