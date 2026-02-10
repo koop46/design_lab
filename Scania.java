@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public abstract class Scania extends SpecialCar {
+public class Scania extends SpecialCar {
 
     public final static double trimFactor = 1.25;
 
@@ -8,10 +8,20 @@ public abstract class Scania extends SpecialCar {
         super(2, 200, Color.white, "Scania", 0 , 0, 5000);
     }
 
+    @Override
     public double speedFactor(){
         return super.getEnginePower() * 0.01 * trimFactor;
     }
 
+
+    @Override
+    public void lowerRamp() {
+        lowerRamp(getBedAngle());
+    }
+    @Override
+    public void raiseRamp() {
+        raiseRamp(10);
+    }
 
     public void lowerRamp(int angleDecrease) {
         int newAngle = bedAngle - angleDecrease;
@@ -40,6 +50,15 @@ public abstract class Scania extends SpecialCar {
             }
         } else {
             System.out.println("Please stop the truck");
+        }
+    }
+
+    @Override
+    public void move() {
+        if (getBedAngle() == 0) {
+            super.move();
+        } else {
+            System.out.println("Kan inte köra! Flaket är uppfällt (" + getBedAngle() + " grader).");
         }
     }
 

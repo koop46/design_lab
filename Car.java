@@ -34,8 +34,14 @@ public abstract class Car implements Movement {
     public double getEnginePower(){return enginePower; }
     public double getCurrentSpeed(){return currentSpeed; }
     public Color getColor(){return color; }
-
+    public double getX() { return x_value; }
+    public double getY() { return y_value; }
+    public int getMass() {return mass;}
     //setter
+    public void setPosition(double x, double y) {
+        this.x_value = x;
+        this.y_value = y;
+    }
     public void setColor(Color clr){ color = clr; }
 
     //action methods
