@@ -80,9 +80,9 @@ public abstract class Car implements Movement {
         }
 
 
-    };
-    public void turnLeft() { direction -= 1;};
-    public void turnRight(){ direction += 1;};
+    }
+    public void turnLeft() { direction -= 1;}
+    public void turnRight(){ direction += 1;}
 
 }
 

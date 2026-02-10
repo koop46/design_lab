@@ -6,9 +6,7 @@ import java.awt.Color;
 class ScaniaTest {
     private Scania scania1;
     @BeforeEach
-    void setup(){
-        scania1 = new Scania();
-    }
+    void setup() { scania1 = new Scania(); }
 
     @Test
     void raiseBedAngle() {
