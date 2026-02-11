@@ -4,28 +4,37 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.awt.Color;
 
 class ScaniaTest {
-    private Scania scania1;
+    private Scania scania;
     @BeforeEach
-    void setup() { scania1 = new Scania(); }
+    void setup() { scania = new Scania(); }
 
     @Test
     void raiseBedAngle() {
-        scania1.raiseBedAngle(10);
-        assertEquals(10, scania1.getBedAngle());
-        scania1.raiseBedAngle(70);
-        assertEquals(10, scania1.getBedAngle());
-        scania1.raiseBedAngle(20);
-        assertEquals(30, scania1.getBedAngle());
+        scania.raiseRamp(10);
+        assertEquals(10, scania.getBedAngle());
+        scania.raiseRamp(70);
+        assertEquals(10, scania.getBedAngle());
+        scania.raiseRamp(20);
+        assertEquals(30, scania.getBedAngle());
     }
 
     @Test
     void lowerBedAngle() {
-        scania1.raiseBedAngle(55);
-        scania1.lowerBedAngle(10);
-        assertEquals(45, scania1.getBedAngle());
-        scania1.lowerBedAngle(70);
-        assertEquals(45, scania1.getBedAngle());
-        scania1.lowerBedAngle(20);
-        assertEquals(25, scania1.getBedAngle());
+        scania.raiseRamp(55);
+        scania.lowerRamp(10);
+        assertEquals(45, scania.getBedAngle());
+        scania.lowerRamp(70);
+        assertEquals(45, scania.getBedAngle());
+        scania.lowerRamp(20);
+        assertEquals(25, scania.getBedAngle());
+    }
+    @Test
+    void CantMoveWithRaisedBed() {
+        scania.raiseRamp(10);
+        scania.startEngine();
+        scania.gas(0.5);
+        scania.move();
+
+        assertEquals(0, scania.getX());
     }
 }
