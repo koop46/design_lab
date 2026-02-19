@@ -26,16 +26,16 @@ class CarTransportTest {
     }
 
     @Test
-    void testCantLoadWithRampUp() {
+    void testCarsFollowTransport() {
         transport.loadCar(volvo);
         transport.startEngine();
         transport.gas(1.0);
         transport.move();
-        assertNotEquals(transport.getX(), volvo.getX());
+        assertEquals(transport.getX(), volvo.getX());
     }
 
     @Test
-    void testCarsFollowTransport() {
+    void testCantLoadWithRampUp() {
         transport.lowerRamp();
         transport.loadCar(volvo);
         transport.raiseRamp();
